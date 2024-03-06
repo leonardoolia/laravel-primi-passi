@@ -15,8 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 $name = ['name' => 'Leonardo', 'surname' => 'Olia'];
-
     return view('home', $name);
-});
+})->name('home');
+
+
+Route::get('/job', function () {
+$job = ['job' => 'Web Developer'];
+    return view('details.job', $job);
+})->name('job');
+
+Route::get('/studies', function () {
+$studies = ['highschool' => 'Foreign languages', 'courses' => 'Full Stack Web Developer course'];
+    return view('details.studies', $studies);
+})->name('studies');
 
 
